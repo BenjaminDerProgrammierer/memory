@@ -1,13 +1,14 @@
 package net.coderdojo.linz.memory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GameResponse {
-    public int id;
-    public int getId() {
+    public String id;
+    public String getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -25,4 +26,5 @@ public class GameResponse {
     public void setPlayers(List<PlayerResponse> players) {
         this.players = players;
     }
+    public List<PlayerResponse> winners = new ArrayList<>();
 }

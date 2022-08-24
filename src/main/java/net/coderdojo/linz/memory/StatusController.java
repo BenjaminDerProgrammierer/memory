@@ -1,5 +1,8 @@
 package net.coderdojo.linz.memory;
 
+import java.util.Arrays;
+import java.util.UUID;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +22,10 @@ public class StatusController {
 
 
     @PostMapping("/game")
-    public String startGame(@RequestBody GameRequest gameRequest) {
-        return "OK";
+    public GameResponse startGame(@RequestBody GameRequest gameRequest) {
+        GameResponse response = new GameResponse();
+        response.setId(UUID.randomUUID().toString());
+        response.setCards(Arrays.asList("😀", "😁", "😆", "😅", "🤣", "😂", "🙂", "😉", "😊", "🙄","😎","😀", "😁", "😆", "😅", "🤣", "😂", "🙂", "😉", "😊", "🙄","😎"));
+        return response;
     }
 }
