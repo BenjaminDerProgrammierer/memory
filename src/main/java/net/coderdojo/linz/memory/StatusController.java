@@ -20,12 +20,12 @@ public class StatusController {
         return "OK";
     }
 
-
     @PostMapping("/game")
     public GameResponse startGame(@RequestBody GameRequest gameRequest) {
         GameResponse response = new GameResponse();
         response.setId(UUID.randomUUID().toString());
         response.setCards(Arrays.asList("😀", "😁", "😆", "😅", "🤣", "😂", "🙂", "😉", "😊", "🙄","😎","😀", "😁", "😆", "😅", "🤣", "😂", "🙂", "😉", "😊", "🙄","😎"));
+        //TODO Weitermachen
         return response;
     }
 }
